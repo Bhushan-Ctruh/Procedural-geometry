@@ -23,12 +23,16 @@ Effect.ShadersStore["uvVertexShader"] = `
 Effect.ShadersStore["uvFragmentShader"] = `
         precision highp float;
 
+        uniform sampler2D textureSampler;
+
         varying vec3 vNormal;
         varying vec2 vUv;
 
         void main() {
+            vec4 textureColor = texture2D(textureSampler, vUv);
             gl_FragColor = vec4(1.,0.,0.,1.);
-            // gl_FragColor.rgb = normalize(vNormal);
-            gl_FragColor.rgb = vec3(vUv.xxx);
+            gl_FragColor.rgb = normalize(vNormal);
+            gl_FragColor.rgb = vec3(vUv, 0.);
+            // gl_FragColor.rgb = textureColor.rgb;
         }
 `;
