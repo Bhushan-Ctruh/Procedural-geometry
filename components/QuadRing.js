@@ -36,7 +36,7 @@ export class QuadRing {
     const normals = [];
     const uvs = [];
 
-    for (let i = 0; i < this.subdivisions; i++) {
+    for (let i = 0; i < this.subdivisions+1; i++) {
       const angle = (i / this.subdivisions) * TAU;
       const dir = getUnitVector(angle);
 
@@ -69,8 +69,8 @@ export class QuadRing {
       const outerRootIndex = i * 2;
       const innerRootIndex = i * 2 + 1;
 
-      const outerNextIndex = (outerRootIndex + 2) % totalVertices;
-      const innerNextIndex = (innerRootIndex + 2) % totalVertices;
+      const outerNextIndex = (outerRootIndex + 2);
+      const innerNextIndex = (innerRootIndex + 2);
       indices.push(
         innerRootIndex,
         innerNextIndex,
