@@ -3,6 +3,7 @@ import "./style.css"
 import { DefaultCube } from "./components/DefaultCube";
 import { Quad } from "./components/Quad";
 import { QuadRing } from "./components/QuadRing";
+import { CubicBezierCurve } from "./components/CubicBezierCurve";
 
 class App {
   constructor(canvas) {
@@ -31,7 +32,9 @@ class App {
 
     // const quad = new Quad(this.scene);
 
-    const quadRing = new QuadRing("quad-ring", {radius: 2, thickness: 1}, this.scene)
+    // const quadRing = new QuadRing("quad-ring", {radius: 2, thickness: 1, subdivisions: 10}, this.scene)
+
+    const cubicBezierCurve = new CubicBezierCurve(this.scene);
 
     this.renderLoop(this._engine, this.scene);
   }
