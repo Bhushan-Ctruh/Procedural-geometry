@@ -1,0 +1,23 @@
+{
+  "name": "temp-seril-poc",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@babylonjs/core": "6.15.0",
+    "@babylonjs/loaders": "6.15.0",
+    "@babylonjs/materials": "6.15.0",
+    "@babylonjs/serializers": "^6.28.1",
+    "patch-package": "^8.0.0",
+    "tweakpane": "^4.0.3"
+  },
+  "devDependencies": {
+    "vite": "^5.1.4"
+  }
+}
